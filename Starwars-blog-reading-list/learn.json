@@ -1,0 +1,15 @@
+{
+  "title": {
+    "en": "Star Wars Blog Reading List",
+    "es": "Lista de Lectura del Blog de Star Wars"
+  },
+  "description": {
+    "en": "React application that consumes SWAPI.tech and lets users save Star Wars people, planets and vehicles as favorites.",
+    "es": "Aplicación React que consume SWAPI.tech y permite guardar personajes, planetas y vehículos de Star Wars como favoritos."
+  },
+  "repository": "",
+  "preview": "",
+  "projectType": "project",
+  "difficulty": "beginner",
+  "technologies": ["React.js", "Javascript", "Vite"]
+}

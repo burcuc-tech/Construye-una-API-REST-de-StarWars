@@ -1,76 +1,154 @@
-<a href="https://www.breatheco.de"><img height="280" align="right" src="https://github.com/4GeeksAcademy/flask-rest-hello/blob/main/docs/assets/badge.png?raw=true"></a>
+# StarWars Blog API and Reading List
 
-# Flask Boilerplate for Junior Developers
+Full-stack Star Wars blog project with a Flask REST API, SQLAlchemy models, Flask Admin, database migrations, and a React/Vite reading-list frontend.
 
-Create flask API's in minutes, [📹 watch the video tutorial](https://youtu.be/ORxQ-K3BzQA).
+The app lets users browse people, planets, and vehicles, open detail pages, and add or remove favorites. Authentication is intentionally not implemented yet, so the API uses a fixed current user (`CURRENT_USER_ID = 1`) and users can be managed from Flask Admin.
 
-- [Extensive documentation here](https://start.4geeksacademy.com).
-- Integrated with Pipenv for package managing.
-- Fast deloyment to render.com or heroku with `$ pipenv run deploy`.
-- Use of `.env` file.
-- SQLAlchemy integration for database abstraction.
+## Tech Stack
 
-## 1) Installation
+- Backend: Python, Flask, Flask-SQLAlchemy, Flask-Migrate, Flask-Admin, PostgreSQL/SQLite
+- Frontend: React, Vite, React Router, Bootstrap, CSS
+- Tooling: Pipenv, npm, ESLint, pycodestyle, Alembic migrations
 
-This template installs itself in a few seconds if you open it for free with Codespaces (recommended) or Gitpod.
-Skip this installation steps and jump to step 2 if you decide to use any of those services.
+## Project Structure
 
-> Important: The boiplerplate is made for python 3.10 but you can change the `python_version` on the Pipfile.
-
-The following steps are automatically runned withing gitpod, if you are doing a local installation you have to do them manually:
-
-```sh
-pipenv install;
-psql -U root -c 'CREATE DATABASE example;'
-pipenv run init;
-pipenv run migrate;
-pipenv run upgrade;
+```text
+src/                         Flask API source code
+migrations/                  Alembic migration files
+Starwars-blog-reading-list/  React/Vite frontend
 ```
 
-> Note: Codespaces users can connect to psql by typing: `psql -h localhost -U gitpod example`
+## Backend Features
 
-## 2) How to Start coding
+- `GET /people`
+- `GET /people/<id>`
+- `POST /people`
+- `PUT /people/<id>`
+- `DELETE /people/<id>`
+- `GET /planets`
+- `GET /planets/<id>`
+- `POST /planets`
+- `PUT /planets/<id>`
+- `DELETE /planets/<id>`
+- `GET /vehicles`
+- `GET /vehicles/<id>`
+- `POST /vehicles`
+- `PUT /vehicles/<id>`
+- `DELETE /vehicles/<id>`
+- `GET /users`
+- `GET /users/favorites`
+- `POST /favorite/people/<id>`
+- `POST /favorite/planet/<id>`
+- `POST /favorite/vehicle/<id>`
+- `DELETE /favorite/people/<id>`
+- `DELETE /favorite/planet/<id>`
+- `DELETE /favorite/vehicle/<id>`
 
-There is an example API working with an example database. All your application code should be written inside the `./src/` folder.
+Favorites are protected with a database check constraint so a favorite row can point to exactly one entity type: person, planet, or vehicle.
 
-- src/main.py (it's where your endpoints should be coded)
-- src/models.py (your database tables and serialization logic)
-- src/utils.py (some reusable classes and functions)
-- src/admin.py (add your models to the admin and manage your data easily)
+## Frontend Features
 
-For a more detailed explanation, look for the tutorial inside the `docs` folder.
+- Responsive catalog for people, planets, and vehicles
+- Detail pages for every resource type
+- Favorite add/remove actions connected to the Flask API
+- Favorites dropdown in the navbar
+- Search across people, planets, and vehicles
+- Image fallback system using local images, mapped official images, and Star Wars Visual Guide
+- Deploy-ready API base URL through `VITE_API_URL`
 
-## Remember to migrate every time you change your models
+## Installation
 
-You have to migrate and upgrade the migrations for every update you make to your models:
+Install backend dependencies:
 
 ```bash
-$ pipenv run migrate # (to make the migrations)
-$ pipenv run upgrade  # (to update your databse with the migrations)
+pipenv install
 ```
 
-## Generate a database diagram
-
-If you want to visualize the structure of your database in the form of a diagram, you can generate it with the following command:
+Install frontend dependencies:
 
 ```bash
-$ pipenv run diagram
+cd Starwars-blog-reading-list
+npm install
 ```
 
-This command will generate a file with the database diagram based on the models defined in `src/models.py`.
+No extra downloads are needed if those dependencies are already installed in the workspace.
 
-## Check your API live
+## Environment
 
-1. Once you run the `pipenv run start` command your API will start running live and you can open it by clicking in the "ports" tab and then clicking "open browser".
+Backend uses `DATABASE_URL` when available. If it is not set, it falls back to SQLite at `/tmp/test.db`.
 
-> ✋ If you are working on a coding cloud like [Codespaces](https://docs.github.com/en/codespaces/developing-in-codespaces/forwarding-ports-in-your-codespace#sharing-a-port) or [Gitpod](https://www.gitpod.io/docs/configure/workspaces/ports#configure-port-visibility) make sure that your forwared port is public.
+Frontend can use the Vite proxy locally or a deployed API URL:
 
-## Publish/Deploy your website!
+```bash
+cd Starwars-blog-reading-list
+cp .env.example .env
+```
 
-This boilerplate it's 100% read to deploy with Render.com and Herkou in a matter of minutes. Please read the [official documentation about it](https://start.4geeksacademy.com/deploy).
+Example frontend variable:
 
-### Contributors
+```bash
+VITE_API_URL=http://localhost:3000
+```
 
-This template was built as part of the 4Geeks Academy [Coding Bootcamp](https://4geeksacademy.com/us/coding-bootcamp) by [Alejandro Sanchez](https://twitter.com/alesanchezr) and many other contributors. Find out more about our [Full Stack Developer Course](https://4geeksacademy.com/us/coding-bootcamps/part-time-full-stack-developer), and [Data Science Bootcamp](https://4geeksacademy.com/us/coding-bootcamps/datascience-machine-learning).
+For local development with the included Vite proxy, `VITE_API_URL` can also be left empty.
 
-You can find other templates and resources like this at the [school github page](https://github.com/4geeksacademy/).
+## Run Locally
+
+Prepare the database and seed sample Star Wars data:
+
+```bash
+pipenv run flask --app src/app.py db upgrade
+pipenv run flask --app src/app.py seed
+```
+
+Start the backend:
+
+```bash
+pipenv run start
+```
+
+Backend URL:
+
+```text
+http://localhost:3000
+```
+
+Start the frontend in another terminal:
+
+```bash
+cd Starwars-blog-reading-list
+npm run dev
+```
+
+Frontend URL:
+
+```text
+http://localhost:5173
+```
+
+## Quality Checks
+
+Backend:
+
+```bash
+python -m py_compile src/app.py src/models.py src/admin.py src/utils.py src/wsgi.py
+pipenv run pycodestyle --config=pycodestyle.cfg src migrations/versions
+```
+
+Frontend:
+
+```bash
+cd Starwars-blog-reading-list
+npm run lint
+npm run build
+```
+
+## Admin
+
+Flask Admin is available at:
+
+```text
+http://localhost:3000/admin
+```
+
+Because authentication is not implemented yet, users should be created directly from Flask Admin or seeded through the database.
