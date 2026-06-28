@@ -15,7 +15,7 @@ The app lets users browse people, planets, and vehicles, open detail pages, and 
 ```text
 src/                         Flask API source code
 migrations/                  Alembic migration files
-Starwars-blog-reading-list/  React/Vite frontend
+frontend/                    React/Vite frontend
 ```
 
 ## Backend Features
@@ -67,7 +67,7 @@ pipenv install
 Install frontend dependencies:
 
 ```bash
-cd Starwars-blog-reading-list
+cd frontend
 npm install
 ```
 
@@ -80,7 +80,7 @@ Backend uses `DATABASE_URL` when available. If it is not set, it falls back to S
 Frontend can use the Vite proxy locally or a deployed API URL:
 
 ```bash
-cd Starwars-blog-reading-list
+cd frontend
 cp .env.example .env
 ```
 
@@ -116,7 +116,7 @@ http://localhost:3000
 Start the frontend in another terminal:
 
 ```bash
-cd Starwars-blog-reading-list
+cd frontend
 npm run dev
 ```
 
@@ -138,7 +138,7 @@ pipenv run pycodestyle --config=pycodestyle.cfg src migrations/versions
 Frontend:
 
 ```bash
-cd Starwars-blog-reading-list
+cd frontend
 npm run lint
 npm run build
 ```
