@@ -1,0 +1,50 @@
+{
+  "builds": [
+    {
+      "src": "package.json",
+      "use": "@vercel/static-build"
+    }
+  ],
+  "rewrites": [
+    {
+      "source": "/people",
+      "destination": "https://starwars-blog-api.onrender.com/people"
+    },
+    {
+      "source": "/people/:path*",
+      "destination": "https://starwars-blog-api.onrender.com/people/:path*"
+    },
+    {
+      "source": "/planets",
+      "destination": "https://starwars-blog-api.onrender.com/planets"
+    },
+    {
+      "source": "/planets/:path*",
+      "destination": "https://starwars-blog-api.onrender.com/planets/:path*"
+    },
+    {
+      "source": "/vehicles",
+      "destination": "https://starwars-blog-api.onrender.com/vehicles"
+    },
+    {
+      "source": "/vehicles/:path*",
+      "destination": "https://starwars-blog-api.onrender.com/vehicles/:path*"
+    },
+    {
+      "source": "/users",
+      "destination": "https://starwars-blog-api.onrender.com/users"
+    },
+    {
+      "source": "/users/:path*",
+      "destination": "https://starwars-blog-api.onrender.com/users/:path*"
+    },
+    {
+      "source": "/favorite/:path*",
+      "destination": "https://starwars-blog-api.onrender.com/favorite/:path*"
+    },
+    {
+      "source": "/(.*)",
+      "destination": "/index.html"
+    }
+  ]
+}

@@ -8,4 +8,4 @@ dist/*
 package.json
 !.vscode
 __pycache__/
-!Starwars-blog-reading-list/package.json
+!frontend/package.json
