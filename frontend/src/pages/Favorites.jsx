@@ -15,7 +15,6 @@ export const Favorites = () => {
     <main>
       <section className="hero-section favorites-hero">
         <div className="container">
-          <p className="eyebrow mb-3">Reading list</p>
           <h1 className="hero-title">Favoritos</h1>
         </div>
       </section>
