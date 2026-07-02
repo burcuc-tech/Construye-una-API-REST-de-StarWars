@@ -595,7 +595,6 @@ a {
   overflow-wrap: anywhere;
 }
 
-
 .favorites-empty-state {
   align-items: flex-start;
   background: rgba(15, 23, 42, 0.92);
@@ -817,5 +816,119 @@ a {
 
   .section-heading h2 {
     font-size: 1.45rem;
+  }
+}
+
+
+@media (max-width: 767.98px) {
+  .navbar-galaxy .navbar-content {
+    align-items: center;
+    display: grid;
+    gap: 0.55rem;
+    grid-template-columns: minmax(0, 1fr) max-content;
+  }
+
+  .navbar-galaxy .navbar-brand {
+    grid-column: 1;
+    grid-row: 1;
+    line-height: 1.15;
+    min-width: 0;
+    overflow-wrap: anywhere;
+  }
+
+  .navbar-galaxy .favorites-dropdown {
+    grid-column: 2;
+    grid-row: 1;
+    justify-self: end;
+    margin-left: 0;
+    max-width: none;
+    min-width: 0;
+  }
+
+  .navbar-galaxy .favorites-actions {
+    justify-content: flex-end;
+    width: auto;
+  }
+
+  .navbar-galaxy .favorites-page-link {
+    display: none;
+  }
+
+  .navbar-galaxy .favorites-toggle {
+    font-size: 0.82rem;
+    min-height: 38px;
+    padding: 0.5rem 0.65rem;
+    width: auto;
+  }
+
+  .navbar-galaxy .search-dropdown {
+    grid-column: 1 / -1;
+    grid-row: 2;
+    margin-left: 0;
+    max-width: none;
+    order: initial;
+    width: 100%;
+  }
+
+  .navbar-galaxy .search-menu {
+    left: 0;
+    right: auto;
+  }
+}
+
+@media (max-width: 575.98px) {
+  .databank-tabs {
+    margin-bottom: 1.25rem;
+  }
+
+  .content-shell {
+    margin-top: -0.25rem;
+  }
+
+  .resource-section {
+    margin-bottom: 1.5rem;
+    padding: 0.85rem;
+  }
+
+  .star-card {
+    border-radius: 14px;
+  }
+
+  .star-card .card-body {
+    padding: 0.9rem;
+  }
+
+  .star-card-description {
+    font-size: 0.84rem;
+    line-height: 1.4;
+    margin-bottom: 1rem;
+  }
+
+  .card-title {
+    font-size: 1rem;
+    margin-bottom: 0.5rem;
+  }
+
+  .star-card .btn-dark {
+    font-size: 0.85rem;
+    padding: 0.45rem 0.65rem;
+  }
+
+  .favorite-button {
+    height: 38px;
+    min-width: 38px;
+  }
+
+  .detail-favorite-button {
+    font-size: 0.875rem;
+    min-height: 38px;
+    padding: 0.375rem 0.75rem;
+  }
+}
+
+@media (max-width: 575.98px) {
+  .footer {
+    font-size: 0.82rem;
+    line-height: 1.45;
   }
 }
