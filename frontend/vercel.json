@@ -8,39 +8,39 @@
   "rewrites": [
     {
       "source": "/people",
-      "destination": "https://starwars-blog-api.onrender.com/people"
+      "destination": "https://starwars-blog-api-ai05.onrender.com/people"
     },
     {
       "source": "/people/:path*",
-      "destination": "https://starwars-blog-api.onrender.com/people/:path*"
+      "destination": "https://starwars-blog-api-ai05.onrender.com/people/:path*"
     },
     {
       "source": "/planets",
-      "destination": "https://starwars-blog-api.onrender.com/planets"
+      "destination": "https://starwars-blog-api-ai05.onrender.com/planets"
     },
     {
       "source": "/planets/:path*",
-      "destination": "https://starwars-blog-api.onrender.com/planets/:path*"
+      "destination": "https://starwars-blog-api-ai05.onrender.com/planets/:path*"
     },
     {
       "source": "/vehicles",
-      "destination": "https://starwars-blog-api.onrender.com/vehicles"
+      "destination": "https://starwars-blog-api-ai05.onrender.com/vehicles"
     },
     {
       "source": "/vehicles/:path*",
-      "destination": "https://starwars-blog-api.onrender.com/vehicles/:path*"
+      "destination": "https://starwars-blog-api-ai05.onrender.com/vehicles/:path*"
     },
     {
       "source": "/users",
-      "destination": "https://starwars-blog-api.onrender.com/users"
+      "destination": "https://starwars-blog-api-ai05.onrender.com/users"
     },
     {
       "source": "/users/:path*",
-      "destination": "https://starwars-blog-api.onrender.com/users/:path*"
+      "destination": "https://starwars-blog-api-ai05.onrender.com/users/:path*"
     },
     {
       "source": "/favorite/:path*",
-      "destination": "https://starwars-blog-api.onrender.com/favorite/:path*"
+      "destination": "https://starwars-blog-api-ai05.onrender.com/favorite/:path*"
     },
     {
       "source": "/(.*)",
