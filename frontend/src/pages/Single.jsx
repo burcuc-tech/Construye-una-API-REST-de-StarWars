@@ -118,8 +118,8 @@ export const Single = () => {
         )}
 
         {entity && (
-          <div className="row g-4 align-items-stretch detail-shell">
-            <div className="col-12 col-lg-6">
+          <div className="detail-shell">
+            <div className="detail-media-column">
               <StarWarsImage
                 type={type}
                 uid={uid}
@@ -128,7 +128,7 @@ export const Single = () => {
                 fallbackClassName="detail-image"
               />
             </div>
-            <div className="col-12 col-lg-6 detail-info-column">
+            <div className="detail-info-column">
               <div className="detail-header">
                 <div>
                   <span className="badge text-bg-warning text-dark mb-3">{categoryLabels[type]}</span>
