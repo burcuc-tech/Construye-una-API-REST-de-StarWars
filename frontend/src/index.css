@@ -154,6 +154,12 @@ a {
   margin: 0;
 }
 
+.databank-tabs {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+}
+
 .databank-tab {
   border: 1px solid rgba(250, 204, 21, 0.78);
   border-radius: 999px;
@@ -729,5 +735,87 @@ a {
 
   .databank-detail-item:nth-child(even) {
     padding-left: 0;
+  }
+}
+
+@media (max-width: 575.98px) {
+  .navbar-galaxy {
+    min-height: 0;
+  }
+
+  .navbar-content {
+    gap: 0.5rem;
+    padding-bottom: 0.65rem;
+    padding-top: 0.65rem;
+  }
+
+  .navbar-brand {
+    font-size: 0.98rem;
+    line-height: 1.1;
+    max-width: 42vw;
+  }
+
+  .favorites-dropdown {
+    margin-left: auto;
+    max-width: calc(58vw - 1rem);
+  }
+
+  .favorites-actions {
+    gap: 0.35rem;
+  }
+
+  .favorites-page-link,
+  .favorites-toggle {
+    font-size: 0.78rem;
+    min-height: 36px;
+    padding: 0.45rem 0.5rem;
+  }
+
+  .favorites-page-link {
+    display: none;
+  }
+
+  .favorites-toggle {
+    width: auto;
+  }
+
+  .search-dropdown {
+    order: 3;
+  }
+
+  .search-input {
+    font-size: 0.9rem;
+    min-height: 38px;
+  }
+
+  .hero-section {
+    padding: 2.25rem 0 2.5rem;
+  }
+
+  .hero-title {
+    font-size: 2.35rem;
+    line-height: 1;
+  }
+
+  .databank-tabs {
+    display: grid;
+    gap: 0.5rem;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    max-width: 100%;
+  }
+
+  .databank-tab {
+    align-items: center;
+    display: inline-flex;
+    font-size: 0.76rem;
+    justify-content: center;
+    min-height: 36px;
+    padding: 0.45rem 0.35rem;
+    text-align: center;
+    white-space: nowrap;
+  }
+
+  .section-heading h2 {
+    font-size: 1.45rem;
   }
 }

@@ -67,7 +67,7 @@ export const Home = () => {
           <div className="row align-items-center g-4">
             <div className="col-12">
               <h1 className="hero-title">Star Wars</h1>
-              <div className="d-flex flex-wrap gap-3 mt-4">
+              <div className="databank-tabs mt-4">
                 <a href="#personajes" className="databank-tab">
                   Personajes
                 </a>
