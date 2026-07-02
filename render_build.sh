@@ -1,8 +1,10 @@
 #!/usr/bin/env bash
 set -o errexit
 
-pipenv install
+python -m pip install --upgrade pip pipenv
 
-pipenv run upgrade
+pipenv install --system --deploy
 
-pipenv run flask --app src/app.py seed
+flask --app src/app.py db upgrade
+
+flask --app src/app.py seed
