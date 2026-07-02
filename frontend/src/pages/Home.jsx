@@ -2,21 +2,25 @@ import { useEffect, useRef } from "react";
 import { EntityCard } from "../components/EntityCard";
 import useGlobalReducer from "../hooks/useGlobalReducer.jsx";
 import { getPeople, getPlanets, getVehicles } from "../api";
+import { categoryTitles } from "../data/categories";
 
 const sections = [
   {
     key: "people",
-    title: "Personajes",
+    id: "personajes",
+    title: categoryTitles.people,
     fetchItems: getPeople
   },
   {
     key: "planets",
-    title: "Planetas",
+    id: "planetas",
+    title: categoryTitles.planets,
     fetchItems: getPlanets
   },
   {
     key: "vehicles",
-    title: "Vehiculos",
+    id: "vehiculos",
+    title: categoryTitles.vehicles,
     fetchItems: getVehicles
   }
 ];
@@ -72,7 +76,7 @@ export const Home = () => {
                   Planetas
                 </a>
                 <a href="#vehiculos" className="databank-tab">
-                  Vehiculos
+                  Vehículos
                 </a>
               </div>
             </div>
@@ -94,7 +98,7 @@ export const Home = () => {
         )}
 
         {sections.map((section) => (
-          <section className="resource-section" id={section.title.toLowerCase()} key={section.key}>
+          <section className="resource-section" id={section.id} key={section.key}>
             <div className="section-heading">
               <div>
                 <p className="section-kicker">Databank</p>

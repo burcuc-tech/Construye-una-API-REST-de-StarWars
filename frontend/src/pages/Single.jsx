@@ -3,13 +3,8 @@ import { Link, useParams } from "react-router-dom";
 import { StarWarsImage } from "../components/StarWarsImage";
 import useGlobalReducer from "../hooks/useGlobalReducer";
 import { databankDescriptions } from "../data/databankDescriptions";
+import { categoryLabels } from "../data/categories";
 import { addFavorite, getEntity, removeFavorite } from "../api";
-
-const categoryLabels = {
-  people: "Personaje",
-  planets: "Planeta",
-  vehicles: "Vehiculo"
-};
 
 const infoTitles = {
   people: "Detalles",
@@ -22,17 +17,17 @@ const hiddenFields = new Set(["created", "edited", "url"]);
 const fieldLabels = {
   birth_year: "Nacimiento",
   climate: "Clima",
-  crew: "Tripulacion",
-  diameter: "Diametro",
+  crew: "Tripulación",
+  diameter: "Diámetro",
   eye_color: "Color de ojos",
-  gender: "Genero",
+  gender: "Género",
   hair_color: "Color de pelo",
   height: "Altura",
   manufacturer: "Fabricante",
   model: "Modelo",
   name: "Nombre",
   passengers: "Pasajeros",
-  population: "Poblacion",
+  population: "Población",
   terrain: "Terreno",
   vehicle_class: "Clase"
 };
@@ -63,7 +58,7 @@ export const Single = () => {
 
       try {
         if (!Object.keys(categoryLabels).includes(type)) {
-          throw new Error("Tipo de recurso no valido.");
+          throw new Error("Tipo de recurso no válido.");
         }
 
         const data = await getEntity(type, uid);

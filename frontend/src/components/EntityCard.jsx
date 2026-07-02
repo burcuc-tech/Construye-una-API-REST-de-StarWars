@@ -3,18 +3,13 @@ import PropTypes from "prop-types";
 import { StarWarsImage } from "./StarWarsImage";
 import useGlobalReducer from "../hooks/useGlobalReducer";
 import { databankDescriptions } from "../data/databankDescriptions";
+import { categoryLabels } from "../data/categories";
 import { addFavorite, removeFavorite } from "../api";
-
-const categoryLabels = {
-  people: "Personaje",
-  planets: "Planeta",
-  vehicles: "Vehiculo"
-};
 
 const defaultDescriptions = {
   people: "Perfil del personaje con datos de la API local y acceso a su ficha completa.",
-  planets: "Mundo de la galaxia con clima, terreno, poblacion y otros detalles.",
-  vehicles: "Vehiculo de Star Wars con modelo, fabricante y caracteristicas tecnicas."
+  planets: "Mundo de la galaxia con clima, terreno, población y otros detalles.",
+  vehicles: "Vehículo de Star Wars con modelo, fabricante y características técnicas."
 };
 
 const getCardDescription = (item, type) => {
@@ -36,7 +31,7 @@ const getCardDescription = (item, type) => {
     const climate = properties.climate && properties.climate !== "unknown" ? properties.climate : null;
     const terrain = properties.terrain && properties.terrain !== "unknown" ? properties.terrain : null;
     const population = properties.population && properties.population !== "unknown"
-      ? `Poblacion ${properties.population}`
+      ? `Población ${properties.population}`
       : null;
     return [climate, terrain, population].filter(Boolean).join(" · ") || defaultDescriptions.planets;
   }

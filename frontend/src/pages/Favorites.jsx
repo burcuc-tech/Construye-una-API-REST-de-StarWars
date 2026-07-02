@@ -5,7 +5,7 @@ import useGlobalReducer from "../hooks/useGlobalReducer";
 const favoriteSections = [
   { key: "people", title: "Personajes" },
   { key: "planets", title: "Planetas" },
-  { key: "vehicles", title: "Vehiculos" }
+  { key: "vehicles", title: "Vehículos" }
 ];
 
 export const Favorites = () => {
@@ -32,13 +32,13 @@ export const Favorites = () => {
             <div className="section-heading">
               <div>
                 <p className="section-kicker">Databank</p>
-                <h2>Tu seleccion</h2>
+                <h2>Tu selección</h2>
               </div>
               <span>0 favoritos</span>
             </div>
             <div className="favorites-empty-state">
-              <h3>No hay favoritos todavia</h3>
-              <p>Agrega personajes, planetas o vehiculos desde la databank.</p>
+              <h3>No hay favoritos todavía</h3>
+              <p>Agrega personajes, planetas o vehículos desde la databank.</p>
               <Link to="/" className="btn btn-dark">
                 Explorar databank
               </Link>

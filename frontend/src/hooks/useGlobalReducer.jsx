@@ -1,4 +1,3 @@
-// Import necessary hooks and functions from React.
 import { useEffect, useReducer, createContext, useContext } from "react";
 import PropTypes from "prop-types";
 import storeReducer, { initialStore, RESOURCES_CACHE_VERSION } from "../store";
