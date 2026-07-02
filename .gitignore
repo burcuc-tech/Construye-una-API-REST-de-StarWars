@@ -3,9 +3,12 @@
 database.database
 database.db
 diagram.png
-public/*
-dist/*
+node_modules/
+dist/
+frontend/dist/
 package.json
+package-lock.json
 !.vscode
 __pycache__/
 !frontend/package.json
+!frontend/package-lock.json
