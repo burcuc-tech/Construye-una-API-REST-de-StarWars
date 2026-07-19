@@ -152,3 +152,9 @@ http://localhost:3000/admin
 ```
 
 Because authentication is not implemented yet, users should be created directly from Flask Admin or seeded through the database.
+
+## Screenshots
+
+![Home](screenshots/homepage1.jpg)
+![Home 2](screenshots/homepage2.jpg)
+![Detail](screenshots/detail.jpg)
