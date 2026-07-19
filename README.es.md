@@ -152,3 +152,9 @@ http://localhost:3000/admin
 ```
 
 Como todavia no hay autenticacion, los usuarios se crean directamente desde Flask Admin o mediante seed de la base de datos.
+
+## Screenshots
+
+![Home](homepage1.JPG)
+![Home 2](homepage2.JPG)
+![Detail](details.JPG)
