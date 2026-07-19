@@ -155,6 +155,6 @@ Because authentication is not implemented yet, users should be created directly 
 
 ## Screenshots
 
-![Home](screenshots/homepage1.JPG)
-![Home 2](screenshots/homepage2.JPG)
-![Detail](screenshots/details.JPG)
+![Home](homepage1.JPG)
+![Home 2](homepage2.JPG)
+![Detail](details.JPG)
